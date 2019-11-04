@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+{% include 'sidebar.html' %}
+
+{% block content %}
+{% endblock %}
+
+{% if messages %}
+<div class="message">
+    {% for message in messages %}
+      <p class="{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+<div style="background-color: #347877; width: 100%; position: fixed; bottom:0; left: 0">
+	<p style="text-align: center;padding: 5px; color: #fff;">&copy; All rights reserved to Team HASH. Copyrights 2018.</p>
+</div>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
+</html> 

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="main">
+	<h1>Product List</h1>
+{% for product in products %}
+	<div class="orderview">
+		<div class="left">
+            <h2>Product ID: {{ product.id }}</h2>
+        </div>
+        <div class="cancelright">
+			<a href="{% url 'product-delete' product.id %}">Delete</a>
+        </div>
+		
+		<hr>
+		<table >  
+			<tr>
+    			<td>Product Type</td>
+    			<td>{{ product.product_type }}</td>
+    		</tr>
+    		<tr>
+    			<td>Unit Price</td>
+    			<td>{{ product.unit_price }}</td>
+
+  			</tr>
+		</table> 
+	</div>
+{% endfor %}
+</div>
+{% endblock %}

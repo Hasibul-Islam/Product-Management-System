@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="main">
+	<h1>Yearly Profit Analysis</h1>
+
+	<div class="graphcontainer">
+		<div class="january test" style="width: 10%">
+			<p>January</p>
+		</div>
+		<div class="february test" style="width: 12%">
+			<p>February</p>
+		</div>
+		<div class="march test" style="width: 35%">
+			<p>March</p>
+		</div>
+		<div class="april test" style="width: 4%">
+			<p>April</p>
+		</div>
+		<div class="may test" style="width: 13%">
+			<p>May</p>
+		</div>
+		<div class="june test" style="width: 5%">
+			<p>June</p>
+		</div>
+		<div class="july test" style="width: 50%">
+			<p>July</p>
+		</div>
+		<div class="august test" style="width: 45%">
+			<p>August</p>
+		</div>
+		<div class="september test" style="width: 25%">
+			<p>September</p>
+		</div>
+		<div class="october test" style="width: 0%">
+			<p>October</p>
+		</div>
+		<div class="november test" style="width: 20%;">
+			<p style="text-align: center;">November</p>
+		</div>
+		<div class="december test" style="width: 0%;">
+			<p>December</p>
+		</div>
+	</div>
+	<div class="graphtext">
+		<h2 style="text-align: center;">2018 PROFIT GRAPH</h2>
+	</div>
+</div>
+<!--
+<div class="main">
+	<p>J : {{ january }}</p>
+	<p>J : {{ profit.january }}</p>
+	<p>J : {{ february }}</p>
+	<p>J : {{ march }}</p>
+	<p>J : {{ april }}</p>
+	<p>J : {{ may }}</p>
+	<p>J : {{ june }}</p>
+	<p>J : {{ july }}</p>
+	<p>J : {{ august }}</p>
+	<p>J : {{ september }}</p>
+	<p>J : {{ october }}</p>
+	<p>J : {{ november }}</p>
+	<p>J : {{ december }}</p>
+</div>
+-->
+{% endblock %}

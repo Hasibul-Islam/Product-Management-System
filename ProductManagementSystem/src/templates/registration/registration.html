@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+
+
+
+<div class="reg main">
+		<h1 style="text-align: center; padding: 20px;">ReyeblTex Management System</h1>
+	<form action="" method="post"> {% csrf_token %}
+		<div class="imgcontainer">
+	    	<h1>User Registration Form</h1>
+	  	</div>
+	  	<hr>
+
+	  	<div class="container">
+	    	<label for="uname" style="margin-left: 20px; margin-top: 10px;"><b>Full Name</b></label>
+	    	 {% render_field form.first_name placeholder="Enter Full Name" required="" %}
+
+	    	<label for="psw" style="margin-left: 20px"><b>E-mail</b></label>
+	    	{% render_field form.email placeholder="Enter Email" required="" %}
+	    	<label for="uname" style="margin-left: 20px; margin-top: 10px;"><b>Username</b></label>
+	    	{% render_field form.username placeholder="Enter Username" required="" %}
+
+	    	<label for="psw" style="margin-left: 20px"><b>Password</b></label>
+	    	{% render_field form.password placeholder="Enter Password" required="" %}
+	    	<label for="psw" style="margin-left: 20px"><b>Confirm Password</b></label>
+	    	{% render_field form.confirm_password placeholder="Confirm Password" required="" %}
+	    	<hr>
+	    	<button type="submit">Register</button>
+	  	</div>
+
+	</form> 
+</div>
+
+
+{% endblock content %}

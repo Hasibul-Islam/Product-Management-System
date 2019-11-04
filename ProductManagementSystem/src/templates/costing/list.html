@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="main">
+	<h1>Costing List</h1>
+	{% for costing in costings %}
+	<div class="orderview">
+		<div class="left">
+			<h2>Invoice No: {{ costing.invoic_number.id }}</h2>
+		</div>
+		<div class="right">
+			<a href="{% url 'costing-update' costing.id %}" style="padding: 10px 15px;">Update</a>
+        </div>
+        <hr>
+		<table >  
+			<tr>
+    			<td>Total Cost</td>
+    			<td>{{ costing.total_price }}</td>
+    		</tr>
+    		<tr>
+    			<td>Total Profit</td>
+    			<td>{{ costing.total_profit }}</td>
+
+  			</tr>
+		</table> 
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+	<div class="addProduct main">
+		<h1 style="text-align: center; padding: 20px;">ReyeblTex Management System</h1>
+		<form method="post" accept="">{% csrf_token %}
+			<h2 style="text-align: center;">Product Entry</h2>
+			<hr style="color: #ccc;">
+			<div class="Productlabel">
+				<p><label>Product Name</label></p>
+				<p><label>Unit Price</label></p>
+			</div>
+
+			  {{ form.non_field_errors }}
+
+			  {% for hidden_field in form.hidden_fields %}
+			    {{ hidden_field.errors }}
+			    {{ hidden_field }}
+			  {% endfor %}
+
+			<div class="Productfield">
+				{% for field in form.visible_fields %}
+		          {{ field.errors }}
+		          {{ field }}
+		        {% endfor %}
+			</div>
+			<hr style="color: #999; clear: both;">
+			<div class="addProductButton">
+		    	<button type="reset">Reset</button>
+				<button type="submit">Save</button>
+			</div>
+		</form>
+	</div>
+{% endblock %}

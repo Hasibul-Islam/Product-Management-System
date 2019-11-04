@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+
+	<div class="costingEntry main">
+		<h1 style="text-align: center; padding: 20px;">ReyeblTex Management System</h1>
+		<form method="post" action="">{% csrf_token %}
+			<h2 style="text-align: center;">Costing</h2>
+			<hr style="color: #ccc;">
+			<div class="label1">
+				<p><label>Invoic Number</label></p>
+				<p><label>Collar</label></p>
+				<p><label>Cutting</label></p>
+				<p><label>Dying</label></p>
+				<p><label>Washing</label></p>
+				<p><label>Others</label></p>
+			</div>
+			<div class="field1">
+				{% render_field form.invoic_number style="pointer-events: none;"  %}
+				{% render_field form.collar  %}
+				{% render_field form.cutting  %}
+				{% render_field form.dying  %}
+				{% render_field form.washing  %}
+				{% render_field form.others  %}
+			</div>
+			<div class="label2">
+				<p style="margin-bottom: 15px;"></p>
+				<p><label>Unit Price</label></p>
+				<p><label>Unit Price</label></p>
+				<p><label>Unit Price</label></p>
+				<p><label>Unit Price</label></p>
+				<p><label>Price</label></p>
+			</div>
+			<div class="field2">
+				<p style="margin-bottom: 40px;"></p>
+				{% render_field form.collar_unit_price  %}
+				{% render_field form.cutting_unit_price  %}
+				{% render_field form.dying_unit_price  %}
+				{% render_field form.washing_unit_price  %}
+				{% render_field form.others_price  %}
+				{% render_field form.total_price style="display:none"  %}
+				{% render_field form.total_profit style="display:none"  %}
+			</div>
+			<hr style="color: #999; clear: both;">
+			<div class="totalcostcontainer">
+				<h2 style="text-align: center;">Total Cost</h2>
+				<div class="totalcost"><p style="padding: 10px">{{ form.instance.total_price }}</p></div>
+			</div>
+			<div class="totalprofitcontainer">
+				<h2 style="text-align: center;">Total Profit</h2>
+				<div class="totalprofit"><p style="padding: 10px">{{ form.instance.total_profit }}</p></div>
+			</div>
+			<hr style="color: #999; clear: both;">
+			<div class="costingEntryButton">
+		    	<button type="reset">Reset</button>
+				<button type="submit">Save</button>
+			</div>
+		</form>
+	</div>
+
+{% endblock %}

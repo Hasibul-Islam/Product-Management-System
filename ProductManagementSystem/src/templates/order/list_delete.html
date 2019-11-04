@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="main">
+    <h1>Total Orders</h1>
+    {% for order in orders %}
+    <div class="orderview">
+        <div class="left">
+            <h2>Order No: {{ order.id }}</h2>
+        </div>
+        <div class="cancelright">
+            <a href="{% url 'order-delete' order.id %}">Cancel</a>
+        </div>
+        <hr>
+        <table>
+            <tr>
+                <td>Buyer Name</td>
+                <td>{{ order.buyer_name }}</td>
+            </tr>
+            <tr>
+                <td>Company Name</td>
+                <td>{{ order.company_name }}</td>
+            </tr>            
+            <tr>
+                <td>Company Address</td>
+                <td>{{ order.company_address }}</td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td>{{ order.email }}</td>
+            </tr>
+            <tr>
+                <td>Phone No.</td>
+                <td>{{ order.phone }}</td>
+            </tr>
+        </table>
+        <hr>
+        <table>
+            <tr>
+                <td>Product Type</td>
+                <td>{{ order.product_type }}</td>
+            </tr>
+            <tr>
+                <td>Height</td>
+                <td>{{ order.height }} cm</td>
+            </tr>            
+            <tr>
+                <td>Width</td>
+                <td>{{ order.wighth }} cm</td>
+            </tr>
+            <tr>
+                <td>Style</td>
+                <td>{{ order.style }}</td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td> <div style="background-color: {{ order.color }}; width: 50px; height: 20px"></div></td>
+            </tr>
+            <tr>
+                <td>Amount in pcs</td>
+                <td>{{ order.amount }} pcs</td>
+            </tr>
+            <tr>
+                <td>Cotton</td>
+                <td>{{ order.cotton }} %</td>
+            </tr>
+            <tr>
+                <td>Asking Price</td>
+                <td>{{ order.asking_price }} $</td>
+            </tr>
+            <tr>
+                <td>Order Date</td>
+                <td>{{ order.order_date }}</td>
+            </tr>
+            <tr>
+                <td>Delivery Date</td>
+                <td>{{ order.delivery_date }}</td>
+            </tr>
+        </table>
+        <!--
+        <td><a href="{% url 'order-update' order.id %}">Edit</a></td>
+        <td><a href="{% url 'order-delete' order.id %}">Delete</a></td>
+    -->
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

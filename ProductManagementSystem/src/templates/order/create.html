@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="newEntry main">
+		<h1 style="text-align: center; padding: 20px;">ReyeblTex Management System</h1>
+		<form method="post" action="">{% csrf_token %}
+			<div class="buyerinfo">
+				<h2>Buyer Information</h2>
+				<hr>
+				<label>Buyer Name:</label>{% render_field form.buyer_name  %}<br>
+				<label>Company Name:</label>{% render_field form.company_name  %}<br>
+				<label>Buyer/Company Address:</label>{% render_field form.company_address rows="3"  %}<br>
+				<h3>Contact</h3>
+				<label>Email:</label>{% render_field form.email  %}<br>
+				<label>Phone No:</label>{% render_field form.phone  %}<br>
+
+			</div>
+			<div class="productinfo">
+				<h2>Product Information</h2>
+				<hr>
+				<div class="label">
+					<p><label>Product Type</label></p>
+					<p><label>Height</label></p>
+					<p><label>Width</label></p>
+					<p><label>Style</label></p>
+					<p><label>Color</label></p>
+					<p><label>Amount(Pcs)</label></p>
+					<p><label>Cotton</label></p>
+					<p><label>Asking Price</label></p>
+					<p><label>Order Date</label></p>
+					<p><label>Delivery Date</label></p>
+				</div>
+				<div class="field">
+					{% render_field form.product_type  %}
+					{% render_field form.height placeholder="cm" %}
+					{% render_field form.wighth placeholder="cm" %}
+					{% render_field form.style  %}
+					{% render_field form.color  %}
+					{% render_field form.amount placeholder="pieces" %}
+					{% render_field form.cotton placeholder="Cotton Percentage(%)" %}
+					{% render_field form.asking_price placeholder="$" %}
+					{% render_field form.order_date  %}
+					{% render_field form.delivery_date  %}
+				</div>
+			</div>
+			
+			<div class="button">
+				<hr>
+		    	<button type="reset">Reset</button>
+				<button type="submit">Save</button>
+			</div>
+		</form>
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="main">
+	<h1>Product Analysis</h1>
+	<div class="product_graphcontainer">
+		{% for k,v in data.items %}
+
+		<div class="pro_test" style="width: Product Percent%">
+			<p>Product Type</p>
+		</div>
+		{% endfor %}
+
+	</div>
+
+	{% for k,v in data.items %}
+		
+	{% endfor %}
+
+
+</div>
+
+{% endblock %}
